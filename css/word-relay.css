@@ -1,0 +1,130 @@
+/* --- 기본 스타일 및 폰트 설정 --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* --- 전체 레이아웃 --- */
+.game-container {
+    display: flex;
+    gap: 50px; /* 게임 영역과 규칙 영역 사이 간격 */
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.game-area {
+    width: 400px;
+}
+
+.rules-area {
+    width: 300px;
+    border-left: 1px solid #e0e0e0;
+    padding-left: 50px;
+}
+
+/* --- 제목 스타일 --- */
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #007bff;
+    text-align: center;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* --- 게임 진행 표시 영역 --- */
+.display-area {
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+.display-area p {
+    margin-bottom: 12px;
+}
+
+/* 현재 순서와 제시어를 강조 */
+#order, #word {
+    font-weight: 700;
+    color: #d6336c; /* 포인트 컬러 */
+    font-size: 20px;
+}
+
+/* --- 단어 입력 영역 --- */
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#word-input {
+    flex-grow: 1; /* 입력창이 남는 공간을 모두 차지하도록 설정 */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 입력창 포커스 시 효과 */
+#word-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+#submit-button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* 버튼 호버 효과 */
+#submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* 게임 종료 시 비활성화 스타일 */
+#word-input:disabled,
+#submit-button:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- 규칙 영역 --- */
+.rules-area ul {
+    list-style-type: '✔️ '; /* 리스트 앞 아이콘 변경 */
+    padding-left: 20px;
+}
+
+.rules-area li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
